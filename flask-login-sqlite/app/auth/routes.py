@@ -241,8 +241,11 @@ def report():
                     if getuid.u_status=='使用中':
                         flash('此雨傘為借用中雨傘')
                         return redirect(url_for('authentication.report'))
-                    else:
+                    elif getuid.u_status=='遺失':
                         getuid.u_status = '正常'
+                    else:
+                        flash('此雨傘未遺失 請確認編號')
+                        return redirect(url_for('authentication.report'))
 
             elif form.status.data != '拾獲':
                 if getu_id1==form.uid.data : 
@@ -262,8 +265,11 @@ def report():
                 if getuid.u_status=='使用中':
                         flash('此雨傘為借用中雨傘')
                         return redirect(url_for('authentication.report'))
-                else:
+                elif getuid.u_status=='遺失':
                     getuid.u_status = '正常'
+                else:
+                    flash('此雨傘未遺失 請確認編號')
+                    return redirect(url_for('authentication.report'))
             else:
                 if getuid.u_status=='使用中':
                         flash('此雨傘為借用中雨傘')
