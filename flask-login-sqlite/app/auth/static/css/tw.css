@@ -1,0 +1,194 @@
+@import url(https://fonts.googleapis.com/css?family=Raleway:400,600,700);
+@import url(https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css);
+
+
+
+figure.snip1253 {
+    font-family: 'Raleway', Arial, sans-serif;
+    color: #fff;
+    position: relative;
+    overflow: hidden;
+    margin: 10px;
+    min-width: 400px;
+    max-width: 800px;
+    /* width: 100%; */
+    background-color: #ffffff;
+    color: #000000;
+    text-align: left;
+    font-size: 16px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.15);
+}
+
+figure.snip1253 * {
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    -webkit-transition: all 0.3s ease;
+    transition: all 0.3s ease;
+}
+
+figure.snip1253 .image {
+    /* max-width: 500px; */
+    max-height: 220px;
+    overflow: hidden;
+}
+
+figure.snip1253 img {
+    max-width: 100%;
+    vertical-align: top;
+    position: relative;
+}
+
+figure.snip1253 figcaption {
+    margin: -40px 15px 0;
+    padding: 15px;
+    position: relative;
+    background-color: #ffffff;
+}
+
+figure.snip1253 .date {
+    background-color: #3d5f91;
+    top: 15px;
+    color: #fff;
+    left: 15px;
+    min-height: 48px;
+    min-width: 48px;
+    position: absolute;
+    text-align: center;
+    font-size: 20px;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+figure.snip1253 .date span {
+    display: block;
+    line-height: 24px;
+}
+
+figure.snip1253 .date .month {
+    font-size: 14px;
+    background-color: rgba(0, 0, 0, 0.1);
+}
+
+figure.snip1253 h3,
+figure.snip1253 p {
+    margin: 0;
+    padding: 0;
+}
+
+figure.snip1253 h3 {
+    min-height: 50px;
+    margin-bottom: 10px;
+    margin-left: 60px;
+    display: inline-block;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+figure.snip1253 p {
+    font-size: 0.8em;
+    margin-bottom: 20px;
+    line-height: 1.6em;
+}
+
+figure.snip1253 footer {
+    padding: 0 25px;
+    background-color: #3d5f91;
+    color: #e6e6e6;
+    font-size: 0.8em;
+    line-height: 40px;
+    text-align: left;
+}
+
+figure.snip1253 footer>div {
+    display: inline-block;
+    margin-left: 10px;
+}
+
+figure.snip1253 footer i {
+    color: rgba(255, 255, 255, 0.2);
+    margin-right: 5px;
+}
+
+figure.snip1253 a {
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    position: absolute;
+    z-index: 1;
+}
+
+figure.snip1253:hover img,
+figure.snip1253.hover img {
+    -webkit-transform: scale(1.15);
+    transform: scale(1.15);
+}
+
+@import url(https://fonts.googleapis.com/css?family=Raleway:400);
+
+.snip1457 {
+    font-family: 'Raleway', Arial, sans-serif;
+    border: none;
+    background-color: #3d5f91;
+    border-radius: 5px;
+    color: #ffffff;
+    cursor: pointer;
+    padding: 0px 30px;
+    display: inline-block;
+    margin: 15px 30px;
+    text-transform: uppercase;
+    line-height: 46px;
+    font-weight: 400;
+    font-size: 1em;
+    outline: none;
+    position: relative;
+    overflow: hidden;
+    font-size: 16px;
+    border-radius: 23px;
+    letter-spacing: 2px;
+    -webkit-transform: translateZ(0);
+    -webkit-transition: all 0.35s ease;
+    transition: all 0.35s ease;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+.snip1457:before {
+    opacity: 0;
+    content: "";
+    position: absolute;
+    top: 0px;
+    bottom: 0px;
+    left: 0px;
+    right: 0px;
+    border-radius: inherit;
+    background-color: #ffffff;
+    -webkit-transition: all 0.3s;
+    transition: all 0.3s;
+    -webkit-transform: translateY(100%);
+    transform: translateY(100%);
+}
+
+.snip1457:after {
+    position: absolute;
+    top: 0px;
+    bottom: 0px;
+    left: 0px;
+    right: 0px;
+    border: 5px solid #5666a5;
+    content: '';
+    border-radius: inherit;
+}
+
+.snip1457:hover,
+.snip1457.hover {
+    background-color: #5666a5;
+    color: #ffffff;
+}
+
+.snip1457:hover:before,
+.snip1457.hover:before {
+    -webkit-transform: translateY(0%);
+    transform: translateY(0%);
+    opacity: 0.25;
+}

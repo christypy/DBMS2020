@@ -1,0 +1,99 @@
+{% extends 'layout.html' %}
+
+{% block content%}
+
+<div class="wrap-login100">
+
+
+
+    <form class="login100-form validate-form" action="" method="post" class="form" role="form">
+
+        <div class="text-center">
+            <img src="/static/images/2.png" class="iistyle">
+        </div>
+
+        <span class="login100-form-title p-b-10 p-t-10">
+            使用者資料
+        </span>
+        <figure class="snip1253">
+
+            <div class="image"><img src="/static/images/3.jpg" alt="sample52" /></div>
+
+            <figcaption>
+                <div class="date"><span class="day" id='spanmonth'>28</span><span class="month" id='spanday'>Oct</span>
+                </div>
+                <h3> {{ current_user.name.title() }}</h3>
+                <p>
+                    學號：{{ current_user.s_id.title() }}
+                </p>
+                <p>
+                    科系：{{ current_user.major.title() }}
+                </p>
+
+                <p>
+                    信箱：：{{ current_user.mail }}
+                </p>
+            </figcaption>
+            <footer>
+                <div class="comments"><i class="ion-chatboxes"></i>狀態：{{ current_user.state.title() }}</div>
+                {%  if '使用中' in current_user.state %}
+                <div class="comments"><i class="ion-umbrella"></i>雨傘編號：{{  getu_id1 }}</div>
+                {% endif %}
+
+                <div class="views"><i class="ion-umbrella"></i>借用次數：{{ current_user.use_count }}</div>
+                <div class="love"><i class="ion-close"></i>違規次數：{{ current_user.foul_count }}</div>
+            </footer><a href="#"></a>
+        </figure>
+        <div class="text-center">
+            <div class="container-login100-form-btn">
+                {%  if current_user.state.title()=='正常' %}
+                <!-- <input type="submit" name="send" value="送出"> -->
+
+                <button class="snip1457" name='h_search' value='雨傘查詢' type='submit'>
+                    雨傘查詢
+                </button>
+                {% elif  current_user.state.title()=='使用中'%}
+                <button class="snip1457" name='h_search' value='雨傘歸還' type='submit'>
+                    雨傘歸還
+                </button>
+
+                
+                {% elif  current_user.state.title()=='使用中(停權)'%}
+                <button class="snip1457" name='h_search' value='雨傘歸還' type='submit'>
+                    雨傘歸還
+                </button>
+                {% elif  current_user.state.title()=='停權'%}
+                <!-- <button class="snip1457"  type='submit'>
+                    雨傘歸還
+                </button> -->
+                {% endif %}
+                <button class="snip1457" name='h_search' value='問題回報' type='submit' style="margin-left:20px;">
+                    問題回報
+                </button>
+
+                
+
+            </div>
+    </form>
+
+    <script src="/static/js/jquery-3.5.1.min.js"></script>
+
+    <script>
+        
+        $(".hover").mouseleave(
+            function () {
+                $(this).removeClass("hover");
+            }
+        );
+
+        var d = new Date();
+
+        var strDate = d.getFullYear() + "/" + (d.getMonth() + 1) + "/" + d.getDate();
+        day1 = d.getDate()
+        mon1 = d.getMonth() + 1
+        console.log(mon1, day1)
+
+        $('#spanmonth').text(mon1.toString());
+        $('#spanday').text(day1.toString());
+    </script>
+    {% endblock content%}

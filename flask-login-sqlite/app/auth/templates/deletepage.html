@@ -1,0 +1,88 @@
+{% extends 'layout.html' %}
+
+{% block content%}
+<link rel="stylesheet" type="text/css" href="/static/css/main1.css">
+
+<!-- <div class="wrap-login100" style="width: 1600px;"> -->
+    <div class="wrap-login100" >
+
+
+    <form class="login100-form validate-form" action="" method="post" class="form" role="form">
+        <!-- <span class="login100-form-logo">
+            <i class="zmdi zmdi-landscape"></i>
+        </span> -->
+        <div class="text-center">
+            <img src="/static/images/2.png" class="iistyle">
+        </div>
+
+        <span class="login100-form-title p-b-34 p-t-20">
+            問題雨傘
+        </span>
+        <span class="login100-form-title p-b-34 p-t-5">
+            問題雨傘總數: {{getlocucount}}
+        </span>
+
+
+
+        <div class="text-center p-t-20">
+            {{ form.hidden_tag() }}
+        </div>
+        <div class="wrap-table">
+            <div class="table100">
+                
+                <table>
+                    <thead>
+                        <tr class="table100-head">
+                            <th class="column1">雨傘編號</th>
+                            <th class="column2">雨傘顏色</th>
+                            <th class="column3">雨傘大小</th>
+                            <th class="column4">雨傘狀態</th>
+                            <!-- <th class="column5">借用</th> -->
+                            <th class="column6">刪除</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <meta charset="UTF-8">
+                        {% if getumbrella %}
+                        {% for temp in getumbrella %}
+                            <tr>
+                                <td class="column1">{{ temp.u_id}}</td>
+                                <td class="column2">{{ temp.u_color }}</td>
+                                <td class="column3">{{ temp.u_size}}</td>
+                                <td class="column4">{{temp.u_status}}</td>
+                                <td class="column6">   
+                                    <button class="snip1457" name='lend_b' value={{ temp.u_id}} type='submit' style="margin-left:5px;">
+                                        刪除
+                                    </button>
+                                </td>
+                            </tr>
+                  
+                            {% endfor %}
+                            {% endif %}
+                    </tbody>
+                </table>
+
+
+            </div>
+        </div>
+
+
+
+
+       
+
+
+        <!-- <div class="container-login100-form-btn">
+            <button class="snip1457" type='submit'>
+                借用
+            </button>
+        </div> -->
+        <div class="text-center p-t-90">
+        </div>
+
+    </form>
+</div>
+<script src="/static/js/jquery-3.5.1.min.js"></script>
+
+
+{% endblock content%}

@@ -1,0 +1,57 @@
+{% extends 'layout.html' %}
+
+{% block content%}
+
+
+<div class="wrap-login100">
+
+
+    <form class="login100-form validate-form" action="" method="post" class="form" role="form">
+        <!-- <span class="login100-form-logo">
+            <i class="zmdi zmdi-landscape"></i>
+        </span> -->
+        <div class="text-center">
+            <img src="/static/images/2.png" class="iistyle">
+        </div>
+
+        <span class="login100-form-title p-b-34 p-t-27">
+            登入
+        </span>
+        <div class="text-center p-t-20">
+            {{ form.hidden_tag() }}
+        </div>
+
+        <div class="wrap-input100 validate-input">
+            <div class="input100">
+                {{ wtf.form_field(form.sid, class='form-control', placeholder='輸入學號') }}
+
+            </div>
+
+        </div>
+
+
+
+        <div class="wrap-input100 validate-input p-t-35">
+            <div class="input100">
+                {{ wtf.form_field(form.password, class='form-control', placeholder='輸入密碼') }}
+            </div>
+            <!-- <input class="input100" type="password" name="pass" placeholder="密碼"> -->
+            <!-- <span class="focus-input100" data-placeholder="&#xf191;"></span> -->
+        </div>
+
+
+        <div class="container-login100-form-btn">
+            <button class="snip1457" type='submit'>
+                登入
+            </button>
+        </div>
+        <div class="text-center p-t-90">
+        </div>
+
+    </form>
+</div>
+{% endblock content%}
+
+<script>
+    $(".alert-info").delay(3000).hide(1);
+</script>

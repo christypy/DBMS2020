@@ -1,0 +1,52 @@
+{% extends 'layout.html' %}
+
+{% block content%}
+
+
+<div class="wrap-login100">
+
+
+    <form class="login100-form validate-form" action="" method="post" class="form" role="form">
+        <!-- <span class="login100-form-logo">
+            <i class="zmdi zmdi-landscape"></i>
+        </span> -->
+        <div class="text-center">
+            <img src="/static/images/2.png" class="iistyle">
+        </div>
+
+        <span class="login100-form-title p-b-34 p-t-27">
+            雨傘歸還
+        </span>
+        <div class="text-center p-t-20">
+            {{ form.hidden_tag() }}
+        </div>
+
+        <div class="wrap-input100 validate-input">
+            <div class="input100">
+                {{ wtf.form_field(form.uid, class='form-control', placeholder='輸入雨傘編號') }}
+            </div>
+
+        </div>
+
+
+
+        <div class="wrap-input100 validate-input p-t-20">
+            <div class="input100">
+                {{ wtf.form_field(form.loc_id, class='form-control', placeholder='選擇所在地點') }}
+            </div>
+
+        </div>
+
+
+
+        <div class="container-login100-form-btn">
+            <button class="snip1457" type='submit'>
+                歸還
+            </button>
+        </div>
+        <div class="text-center p-t-90">
+        </div>
+
+    </form>
+</div>
+{% endblock content%}

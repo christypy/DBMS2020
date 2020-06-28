@@ -1,0 +1,67 @@
+{% extends 'layout.html' %}
+
+{% block content%}
+
+
+<div class="wrap-login100">
+
+
+    <form class="login100-form validate-form" action="" method="post" class="form" role="form">
+        {{ form.csrf_token() }}
+
+        <div class="text-center">
+            <img src="/static/images/2.png" class="iistyle">
+        </div>
+
+        <span class="login100-form-title p-b-5 p-t-10">
+            註冊
+        </span>
+        <div class="text-center p-t-3">
+            {{ form.hidden_tag() }}
+        </div>
+
+        <div class="wrap-input100 validate-input ">
+            <div class="input100 ">
+                
+                {{ wtf.form_field(form.s_id, class='form-control', placeholder='輸入學號') }}
+            </div>
+            <div class="text-center p-t-35">
+
+            </div>
+            <div class="input100">
+                {{ wtf.form_field(form.name, class='form-control', placeholder='輸入姓名') }}
+
+            </div>
+            <div class="text-center p-t-35"></div>
+            <div class="input100">
+                {{ wtf.form_field(form.major, class='form-control', placeholder='選擇科系') }}
+            </div>
+            <div class="text-center p-t-35">
+
+            </div>
+            <div class="input100">
+
+                {{ wtf.form_field(form.password, class='form-control', placeholder='密碼') }}
+            </div>
+            <div class="text-center p-t-35">
+
+            </div>
+            <div class="input100">
+                {{ wtf.form_field(form.confirm, class='form-control', placeholder='再次輸入密碼') }}
+
+            </div>
+            <div class="text-center p-t-35">
+
+            </div>
+            <div class="container-login100-form-btn">
+                <button class="snip1457" type='submit'>
+                    註冊
+                </button>
+            </div>
+
+
+        </div>
+
+    </form>
+</div>
+{% endblock content%}

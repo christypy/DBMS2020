@@ -1,0 +1,46 @@
+{% extends 'layout.html' %}
+
+{% block content%}
+
+
+<div class="wrap-login100">
+
+
+    <form class="login100-form validate-form" action="" method="post" class="form" role="form">
+
+        <div class="text-center">
+            <img src="/static/images/2.png" class="iistyle">
+        </div>
+
+        <span class="login100-form-title p-b-34 p-t-27">
+            雨傘查詢
+        </span>
+        <div class="text-center p-t-20">
+            {{ form.hidden_tag() }}
+        </div>
+
+        <div class="wrap-input100 validate-input">
+            <div class="input100">
+                {{ wtf.form_field(form.loc_id, class='form-control') }}
+
+            </div>
+
+        </div>
+        
+
+
+       
+        <div class="container-login100-form-btn">
+            <button class="snip1457" type='submit'>
+                查詢
+            </button>
+        </div>
+        <div class="text-center p-t-90">
+        </div>
+
+
+       
+
+    </form>
+</div>
+{% endblock content%}
