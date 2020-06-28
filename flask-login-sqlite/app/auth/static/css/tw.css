@@ -28,7 +28,7 @@ figure.snip1253 * {
 
 figure.snip1253 .image {
     /* max-width: 500px; */
-    max-height: 220px;
+    max-height: 290px;
     overflow: hidden;
 }
 
@@ -39,7 +39,7 @@ figure.snip1253 img {
 }
 
 figure.snip1253 figcaption {
-    margin: -40px 15px 0;
+    margin: -40px 20px 0;
     padding: 15px;
     position: relative;
     background-color: #ffffff;
