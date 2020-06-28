@@ -231,33 +231,45 @@ def report():
 
         getlocid = Location.query.filter_by(building_name=form.loc_id.data).first()
         if '使用中' in getusr.state :
-        # if getusr.state =='使用中':
             getu_id1 = Lend_log.query.filter_by(s_id=current_user.s_id)[-1].u_id
             
             if form.status.data=='拾獲':
                 if getu_id1==form.uid.data :
                     flash('你正在使用這把傘 無法拾獲')
                     return redirect(url_for('authentication.report'))
-
                 else:
-                    getuid.u_status = '正常'
+                    if getuid.u_status=='使用中':
+                        flash('此雨傘為借用中雨傘')
+                        return redirect(url_for('authentication.report'))
+                    else:
+                        getuid.u_status = '正常'
+
             elif form.status.data != '拾獲':
-                if getu_id1==form.uid.data :
-                    
+                if getu_id1==form.uid.data : 
                     if getusr.foul_count >=3:
                         getusr.state='停權'
                     else:
                         getusr.foul_count=getusr.foul_count+1
-                        
                         getusr.state='正常'
-                getuid.u_status = form.status.data
+                elif getuid.u_status=='使用中':
+                    flash('此雨傘為借用中雨傘')
+                    return redirect(url_for('authentication.report'))
+                else:
+                    getuid.u_status = form.status.data
         # elif  getusr.state !='使用中':
         elif '使用中'not in getusr.state :
             if form.status.data=='拾獲':
-                getuid.u_status = '正常'
+                if getuid.u_status=='使用中':
+                        flash('此雨傘為借用中雨傘')
+                        return redirect(url_for('authentication.report'))
+                else:
+                    getuid.u_status = '正常'
             else:
-                # flash('else')
-                getuid.u_status = form.status.data
+                if getuid.u_status=='使用中':
+                        flash('此雨傘為借用中雨傘')
+                        return redirect(url_for('authentication.report'))
+                else:
+                    getuid.u_status = form.status.data
 
 
         # getuid.u_status = form.status.data
