@@ -124,6 +124,7 @@ def deletepage():
 
 
 
+
 @authentication.route('/searchloc', methods=['GET', 'POST'])
 def searchloc():
     form = SearchlocForm(request.form)
@@ -208,7 +209,7 @@ def returnpage():
         
 
         if '停權' in getusr.state :
-            if getusr.foul_count >=3:
+            if getusr.foul_count >=5:
                 getusr.state='停權'
             else:
                 flash('超過三天歸還，紀錄違規一次')
@@ -249,10 +250,11 @@ def report():
 
             elif form.status.data != '拾獲':
                 if getu_id1==form.uid.data : 
-                    if getusr.foul_count >=3:
+                    if getusr.foul_count >=5:
                         getusr.state='停權'
                     else:
                         getusr.foul_count=getusr.foul_count+1
+                        flash('借用傘遺失損壞 違規次數+1')
                         getusr.state='正常'
                 elif getuid.u_status=='使用中':
                     flash('此雨傘為借用中雨傘')
