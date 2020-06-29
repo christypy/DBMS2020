@@ -25,13 +25,13 @@ class RegistrationForm(Form):
     # email = StringField('E-mail', validators=[DataRequired(), Email(), email_exists])
     major=SelectField('科系',validators=[DataRequired('請選擇科系')], choices=[('資科','資科'),('統計','統計'),('資管','資管'),('國貿','國貿'),('經濟','經濟'),('地政','地政'),('財政','財政'),('教育','教育'),('應數','應數'),('金融','金融'),('土語','土語')],default=1)
     # print('major',major)
-    password = PasswordField('密碼', validators=[DataRequired(message="不能為空")])
-    confirm = PasswordField('再次輸入密碼', validators=[DataRequired(message="不能為空"), EqualTo('password', message='密碼必須相同,請再次輸入')])
+    password = PasswordField('密碼', validators=[DataRequired(message="不能為空"),Length(3,15, message='3-15字')])
+    confirm = PasswordField('再次輸入密碼', validators=[DataRequired(message="不能為空"), Length(3,15, message='3-15字'),EqualTo('password', message='密碼必須相同,請再次輸入')])
     submit = SubmitField('註冊')
 
 class LoginForm(Form):
     sid=StringField('學號',validators=[DataRequired(),Regexp('[0-9]{9}$', message='請輸入學號，九位數字')])
-    password = PasswordField('密碼', validators=[DataRequired()])
+    password = PasswordField('密碼', validators=[DataRequired(),Length(3,15, message='3-15字')])
     stay_loggedin = BooleanField('記住我')
     submit = SubmitField('登入')
 
