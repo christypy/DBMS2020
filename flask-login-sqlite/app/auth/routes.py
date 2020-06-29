@@ -249,8 +249,10 @@ def report():
                         return redirect(url_for('authentication.report'))
 
             elif form.status.data != '拾獲':
+
                 if getu_id1==form.uid.data : 
                     if getusr.foul_count >=5:
+                        flash('帳號已停權')
                         getusr.state='停權'
                     else:
                         getusr.foul_count=getusr.foul_count+1
