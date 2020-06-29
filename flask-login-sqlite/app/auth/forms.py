@@ -19,7 +19,7 @@ def uid_exists(form, field):
 
 
 class RegistrationForm(Form):
-    s_id=StringField('學號',validators=[DataRequired(),Length(9,message='請輸入學號，九位數字'),sid_exists])
+    s_id=StringField('學號',validators=[DataRequired(),Length(max=9,message='請輸入學號，九位數字')	,sid_exists])
     name = StringField('姓名', validators=[DataRequired(), Length(1,15, message='1-15字')])
     # email = StringField('E-mail', validators=[DataRequired(), Email(), email_exists])
     major=SelectField('科系',validators=[DataRequired('請選擇科系')], choices=[('資科','資科'),('統計','統計'),('資管','資管'),('國貿','國貿'),('經濟','經濟'),('地政','地政'),('財政','財政'),('教育','教育'),('應數','應數'),('金融','金融'),('土語','土語')],default=1)
