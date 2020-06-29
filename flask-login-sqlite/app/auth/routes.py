@@ -209,7 +209,8 @@ def returnpage():
         
 
         if '停權' in getusr.state :
-            if getusr.foul_count >=5:
+            if getusr.foul_count >=４:
+                getusr.foul_count=getusr.foul_count+1
                 getusr.state='停權'
             else:
                 flash('超過三天歸還，紀錄違規一次')
@@ -251,7 +252,8 @@ def report():
             elif form.status.data != '拾獲':
 
                 if getu_id1==form.uid.data : 
-                    if getusr.foul_count >=5:
+                    if getusr.foul_count >=4:
+                        getusr.foul_count=getusr.foul_count+1
                         flash('帳號已停權')
                         getusr.state='停權'
                     else:
