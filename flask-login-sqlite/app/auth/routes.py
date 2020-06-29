@@ -209,7 +209,7 @@ def returnpage():
         
 
         if '停權' in getusr.state :
-            if getusr.foul_count >=４:
+            if getusr.foul_count >=4:
                 getusr.foul_count=getusr.foul_count+1
                 getusr.state='停權'
             else:
