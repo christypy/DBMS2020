@@ -30,7 +30,7 @@ class RegistrationForm(Form):
     submit = SubmitField('註冊')
 
 class LoginForm(Form):
-    sid=StringField('學號',validators=[DataRequired(),Length(9,message='請輸入學號，九位數字')])
+    sid=StringField('學號',validators=[DataRequired(),Regexp('[0-9]{9}$', message='請輸入學號，九位數字')])
     password = PasswordField('密碼', validators=[DataRequired()])
     stay_loggedin = BooleanField('記住我')
     submit = SubmitField('登入')
